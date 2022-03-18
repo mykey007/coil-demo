@@ -1,0 +1,25 @@
+{% if hero--timeline %}
+<section class="usa-hero usa-hero__timeline" aria-label="Introduction";>
+  <div class="grid-container">
+    <div class="usa-hero__callout">
+      {% if hero--timeline.callout %}
+      <h1 class="usa-hero__heading">
+        {% if hero.callout.alt %}
+        <span class="usa-hero__heading--alt">{{ hero--timeline.callout.alt }}</span>
+        {% endif %}
+        {{ hero--timeline.callout.text | default: hero--timeline.callout }}
+      </h1>
+      {% endif %}
+
+      {{ hero--timeline.content | markdownify }}
+
+      {% if hero--timeline.button %}
+      <a class="usa-button"
+        href="{{ hero--timeline.button.href | relative_url }}">
+        {{ hero--timeline.button.text }}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}

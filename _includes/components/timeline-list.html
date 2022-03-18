@@ -1,0 +1,19 @@
+{% assign timelines = include.timelines %}
+
+<section class="usa-graphic-list usa-section usa-section--dark">
+  <div class="grid-container">
+    {% for timeline in timelines %}
+      {% cycle '<div class="usa-graphic-list__row grid-row grid-gap">', '' %}
+      <div class="usa-media-block tablet:grid-col">
+        <h2>{{ timeline.entry.week.src }}</h2>
+        <div class="usa-media-block__body">
+          {% if timeline.entry.title %}<h2 class="usa-graphic-list__heading">{{ timeline.entry.title }}</h2>{% endif %}
+          {{ timeline.entry.date }}
+          {{ timeline.entry.description }}
+        </div>
+      </div>
+      {% cycle '', '</div>' %}
+    {% endfor %}
+  </div>
+</section>
+page.timelines.entry.title

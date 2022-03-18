@@ -1,0 +1,185 @@
+.usa-hero {
+  &__callout {
+    color: #fff;
+    background-color: transparent;
+  }
+  &__heading {
+    color: #fff;
+    font-family: 'Oswald', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  &__timeline {
+    background: #0059FC;
+  }
+}
+
+.usa-section-timeline {
+  padding-top: 0;
+  .usa-card__header {
+    padding: 3rem 1.5rem 0 1.5rem;
+  }
+  .usa-card__container {
+    box-shadow: 0px 4px 4px rgba(79, 79, 79, 0.31);
+  }
+}
+
+.usa-heading {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  font-style: normal;
+  color: #000;
+
+  &__timeline {
+    color: #fff;
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 500;
+  }
+
+  &__tagline {
+    color: #fff;
+    font-size: 23px;
+    line-height: 33px;
+  }
+
+  &__week {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 34px;
+    text-transform: uppercase;
+  }
+
+  &__dates {
+    font-size: 17px;
+    line-height: 34px;
+    text-align: right;
+  }
+
+  &__event-title {
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 150%;
+  }
+
+  &__event-description {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 172%;
+  }
+}
+
+/* utility classes */
+.m-t-40 {
+  margin-top: 2.5rem;
+}
+
+.m-b-40 {
+  margin-bottom: 2.5rem;
+}
+
+
+/* button navigation styles */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #565c65;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+}
+
+/* The dots/bullets/indicators */
+.dot-block{
+  position: relative;
+  bottom: 0;
+  text-align:center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 27px;
+  width: 27px;
+  margin: 0 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 5px solid #FFC402;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background: #FFC402;
+width: 36px;
+height: 36px;
+border: 3px solid #FFC402;
+background-clip: content-box;
+padding: 0.5rem;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+@media (max-width: 475px) { 
+  .dot {
+    height: 19px;
+    width: 19px;
+  }
+  .active, .dot:hover {
+    width: 25px;
+    height: 25px;
+    }
+    .prev, .next {
+      display: none;
+    }
+ }

@@ -1,0 +1,89 @@
+---
+layout: default
+main:
+  class: usa-section usa-section-timeline
+scripts:
+  - /../assets/uswds/js/carousel.js
+
+---
+
+<section class="usa-hero usa-hero__timeline" aria-label="Introduction">
+  <div class="grid-container padding-y-8">
+    <div class="grid-row">
+      <div class="grid-col-12">
+          <h1 class="usa-heading__timeline">
+            {{ page.hero--timeline.callout.text }}
+          </h1>
+          <p class="usa-heading__tagline">
+            {{ page.hero--timeline.content }}
+          </p>
+
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="grid-container usa-section" aria-label="Content">
+  <div class="dot-block" aria-label="navigation">
+    <!-- TODO: uncaught reference error becasue these are not defined when looped? -->
+    <button class="dot" onclick="currentSlide(1)"  tabindex="0"></button> 
+    <button class="dot" onclick="currentSlide(2)"  tabindex="0"></button> 
+    <button class="dot" onclick="currentSlide(3)"  tabindex="0"><buttonn>
+    <button class="dot" onclick="currentSlide(4)"  tabindex="0"></button> 
+    <button class="dot" onclick="currentSlide(5)"  tabindex="0"></button> 
+    <button class="dot" onclick="currentSlide(6)"  tabindex="0"></button> 
+    <button class="dot" onclick="currentSlide(7)"  tabindex="0"></button> 
+    <button class="dot" onclick="currentSlide(8)"  tabindex="0"></button>
+    <button class="dot" onclick="currentSlide(9)"  tabindex="0"></button> 
+    <button class="dot" onclick="currentSlide(10)" tabindex="0"></button> 
+    <button class="dot" onclick="currentSlide(11)" tabindex="0"></button> 
+    <button class="dot" onclick="currentSlide(12)" tabindex="0"></button> 
+    <!-- TODO: See if we add these in another iteration -->
+    <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+ </div>
+  <ul class="usa-card-group slideshow-container m-t-40">
+    {% for item in page.timelines %}
+      <li class="grid-col-12 usa-card mySlides fade">
+      <div class="usa-card__container ">
+        <header class="usa-card__header m-b-40">
+          <div class="grid-container">
+            <div class="grid-row grid-gap">
+              <h2 class="usa-card__heading grid-col-6 usa-heading__week">{{ item.week }}</h2>
+              <p class="margin-0 grid-col-6 grid-offset-3 usa-heading__dates">{{ item.date }}</p>
+            </div>
+          </div>
+        </header>
+        <div class="usa-card__body">
+          <div class="border-top border-accent-warm-light m-t-40" aria-hidden="true">&nbsp;</div>
+          
+          <p class="usa-heading__event-title">
+            {{ item.title }}
+
+            {% if item.title-date %}
+              <span class="usa-heading__dates">{{ item.title-date }}</span>
+            {% endif %}
+          </p>
+          <p class="usa-heading__event-description">
+            {{ item.description }}
+          </p>
+
+          {% if item.titleTwo %}
+          <div class="border-top border-accent-warm-light m-t-40" aria-hidden="true">&nbsp;</div>
+            <p class="usa-heading__event-title">
+              {{ item.titleTwo }}
+              
+              {% if item.title-date %}
+              <span class="usa-heading__dates">{{ item.title-date }}</span>
+            {% endif %}
+            </p>
+          {% endif %}
+          {% if item.descriptionTwo %}
+            <p class="usa-heading__event-description">{{ item.descriptionTwo }}</p>
+          {% endif %}
+        </div>
+      </div>
+      </li>
+      {% endfor %}
+  </ul>
+</section>
